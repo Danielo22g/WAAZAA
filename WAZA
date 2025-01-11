@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Contacto</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: linear-gradient(45deg, #ff007f, #00bcd4);
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    /* Input estilo */
+    .input-field {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: 2px solid #ffffff;
+      outline: none;
+      font-size: 18px;
+      background: transparent;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      border: 2px solid #00bcd4;
+      background: rgba(0, 188, 212, 0.2);
+    }
+
+    /* Botón de envío */
+    .submit-btn {
+      padding: 15px 25px;
+      background: #ff007f;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background: #00bcd4;
+      transform: scale(1.1);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .submit-btn:active {
+      background: #ff007f;
+      transform: scale(1);
+    }
+
+    /* Efectos de animación para los inputs */
+    .input-field {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Animación para los inputs */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Formulario de Contacto</h1>
+
+    <!-- Input para ingresar algo -->
+    <input type="text" id="userInput" class="input-field" placeholder="Escribe algo...">
+
+    <!-- Input para el nombre -->
+    <input type="text" id="userName" class="input-field" placeholder="Tu nombre">
+
+    <!-- Botón de envío -->
+    <button class="submit-btn" onclick="sendData()">Enviar</button>
+  </div>
+
+  <script>
+    // Función para enviar los datos
+    function sendData() {
+      var userInput = document.getElementById("userInput").value;
+      var userName = document.getElementById("userName").value;
+
+      // Mostrar en la consola como ejemplo de lo que se enviaría
+      console.log("Input: " + userInput);
+      console.log("Nombre: " + userName);
+
+      // En este punto podrías configurar un servicio como Formspree o usar un backend para almacenar los datos
+      alert("¡Formulario enviado! (Este es solo un ejemplo, no se enviarán datos realmente aquí.)");
+    }
+  </script>
+
+</body>
+</html>
